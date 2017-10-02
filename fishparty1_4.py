@@ -1,5 +1,4 @@
 import numpy as np
-#np.random
 from pylab import *
 import time
 
@@ -35,7 +34,7 @@ if (lang == 'EN') or (lang=='En') or (lang=='en'):
                 print('On', i, 'tournament x', d)
                 if d <51:
                     print('Profit -', c*d*buyin, 'euro')
-                if d >50:
+                else:
                     print('Profit -', cj*d*buyin, 'euro')
             if d <51:
                 prize += c*d*buyin
@@ -44,27 +43,21 @@ if (lang == 'EN') or (lang=='En') or (lang=='en'):
                 profitgrb += c * d*buyin - buyin +buyin*rake*rakeback
                 profitggrb += [profitgrb]
 
-    #        print ('Множитель -', d)
-#        print ('Выигрыш -', c*d)
-
-            if d>50:
+            else:
                 prize +=cj*d*buyin
                 profitg += cj * d*buyin - 1
                 profitgg += [profitg]
                 profitgrb += cj * d*buyin - buyin + buyin*rake * rakeback
                 profitggrb += [profitgrb]
-#        print (d)
-#        print (cj*d)
+
 
             i += 1
 
 
-#print (prize)
+
         profit = prize-kolvo*buyin
 
         print ('For', kolvo, 'tournaments:')
-#print ('Максимальный множитель -', max (d))
-#print ('Максимальный выигрыш -', max (c*d), 'бай-инов')
         print ('Profit -', profit, 'euro')
         print ('With rakebacks - ', profit+0.3*kolvo*0.05*buyin, 'euro')
         print ('ROI', (profit/(kolvo*buyin))*100, '%')
@@ -122,36 +115,33 @@ if (lang == 'RU') or (lang=='Ru') or (lang=='ru'):
                 print('На', i, 'турнире выпал множитель x', d)
                 if d <51:
                     print('Выигрыш -', c*d*buyin, 'евро')
-                if d >50:
+                else:
                     print('Выигрыш -', cj*d*buyin, 'евро')
+
+
             if d <51:
                 prize += c*d*buyin
                 profitg +=c*d*buyin-buyin
                 profitgg +=[profitg]
                 profitgrb += c * d*buyin - buyin +buyin*rake*rakeback
                 profitggrb += [profitgrb]
-
-    #        print ('Множитель -', d)
-#        print ('Выигрыш -', c*d)
-
-            if d>50:
+                
+            else:
                 prize +=cj*d*buyin
                 profitg += cj * d*buyin - 1
                 profitgg += [profitg]
                 profitgrb += cj * d*buyin - buyin + buyin*rake * rakeback
                 profitggrb += [profitgrb]
-#        print (d)
-#        print (cj*d)
+                
+
 
             i += 1
 
 
-#print (prize)
+
         profit = prize-kolvo*buyin
 
         print ('За', kolvo, 'турниров:')
-#print ('Максимальный множитель -', max (d))
-#print ('Максимальный выигрыш -', max (c*d), 'бай-инов')
         print ('Итоговый профит -', profit, 'евро')
         print ('С учетом рейкбека - ', profit+0.3*kolvo*0.05*buyin, 'евро')
         print ('ROI', (profit/(kolvo*buyin))*100, '%')
@@ -169,13 +159,10 @@ if (lang == 'RU') or (lang=='Ru') or (lang=='ru'):
 
         q = str (input('Хотите провести симуляцию еще раз? Да/Нет'))
 
-        if (q=='Да') or (q=='да'):
-
+        if (q=='Да') or (q=='да') or (q=='ДА'):
             print ('Удачи!')
-
             j+=1
         else:
-
             print ('Наверно, хватит симулировать. Пора катать. Удачи!')
             print('Разработка - Артур Яровой, 2017 год')
             time.sleep(5)
